@@ -39,3 +39,43 @@
 //     console.log(index+":"+fruties);
 // });
 
+
+// let arr = [1,2,3,4,5];
+// let sum=0;
+
+// arr.forEach((num)=>{
+//     sum+=num;
+// });
+// console.log("Sum: "+sum);
+
+// let students = [
+//     {name: "Asha", mark: 85},
+//     {name: "Raj", mark: 92},
+//     {name: "Kiran", mark: 78}
+// ];
+
+// students.forEach(s => {
+//     console.log(s.name + " scored " + s.mark);
+// });
+
+// let nums = [1, 2, 3, 4];
+
+// let doubled = nums.map(n => n * 2);
+
+// console.log(doubled); // [2, 4, 6, 8]
+
+
+// let nums = [1, 2, 3, 4];
+
+// let doubled = nums.map(n => n * 3);
+
+// console.log(doubled); // [2, 4, 6, 8]
+
+let nums = [5, 12, 8, 20, 15];
+
+let result = nums.filter(n => n > 10);
+
+console.log(result); // [12, 20, 15]
+
+
+
