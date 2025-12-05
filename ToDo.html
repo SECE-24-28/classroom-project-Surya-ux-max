@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>To-Do</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            .error-message { color: #c00; display:none; margin-top:6px; }
+            #todo-list { margin-top: 12px; }
+            #todo-list li { margin-bottom: 6px; }
+            body{
+                background-color: black;
+            }
+            input[type="text"] {
+                padding: 8px;
+                width: 200px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+            button {
+                padding: 8px 12px;
+                margin-right: 5px;
+                background  : var(--button-bg, #222222);
+                color: var(--text-color, #ffffff);
+                border: 1px solid var(--border-color, rgba(0,0,0,0));
+            }
+            h1{
+                color: white;
+            }
+            p{
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+        <h1>Welcome to To-Do Page</h1>
+        <p>This is a simple HTML document for the To-Do.</p>
+        <p id="Activity"></p>
+        <input type="text" id="item-input" placeholder="Enter the Activity to To-Do List">
+        <div id="error-message" class="error-message" aria-live="polite"></div>
+        <br>
+        <button id="add-activity-btn" type="button">Add Activity</button>
+        <button id="remove-activity-btn" type="button">Remove Last Activity</button>
+        <ol id="todo-list" aria-live="polite"></ol>
+        </center>
+
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const Activity = document.getElementById("Activity");
+                const addButton = document.getElementById("add-activity-btn");
+                const removeButton = document.getElementById("remove-activity-btn");
+                const itemInput = document.getElementById("item-input");
+                const errorMsg = document.getElementById("error-message");
+                const todoList = document.getElementById("todo-list");
+
+                if (!addButton || !removeButton || !itemInput || !errorMsg || !todoList) return;
+
+                function addItem() {
+                    const value = itemInput.value.trim();
+                    if (!value) {
+                        errorMsg.textContent = "Please enter an activity before adding.";
+                        errorMsg.style.display = 'block';
+                        itemInput.focus();
+                        return;
+                    }
+                    // hide error
+                    errorMsg.style.display = 'none';
+                    // create list item
+                    const li = document.createElement('li');
+                    li.textContent = value;
+                    todoList.appendChild(li);
+                    Activity.textContent = 'Last added: ' + value;
+                    itemInput.value = '';
+                    itemInput.focus();
+                }
+
+                function removeLast() {
+                    if (todoList.lastElementChild) {
+                        todoList.removeChild(todoList.lastElementChild);
+                        Activity.textContent = 'Last activity removed';
+                    }
+                }
+
+                addButton.addEventListener('click', addItem);
+                removeButton.addEventListener('click', removeLast);
+
+                // allow pressing Enter to add
+                itemInput.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter') addItem();
+                });
+            });
+        </script>
+
+    </body>
+</html>
