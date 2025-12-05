@@ -6,21 +6,15 @@
         <title>Practice</title>
     </head>
     <body>
-        <h1>Fetch data from Rest API</h1>
-        <button id="fetch-data-btn" type="button">Fetch Data</button>
-        <div id="main"></div>
+        <h1>Simultaneous Surya</h1>
+
+        <input type="text" id="t1">
+        <input type="text" id="t2">
         <script>
-            function fetchRecords(){
-                let res =  fetch('https://jsonplaceholder.typicode.com/users')
-                //fetchind the data
-                let data = res.json();
-                //returning the data in json format
-                data.forEach(obj=>{
-                    //iterating the data
-                    let p = document.createElement('p');
-                    p.innerText = obj.name;
-                    document.getElementById('main').appendChild(p);
-                })
-            }
+
+            let t1 = document.getElementById("t1");
+            t1.addEventListener("keyup",()=>{
+                document.getElementById("t2").value = t1.value;
+            })
         </script>
-    </body>
+    </body></html>
