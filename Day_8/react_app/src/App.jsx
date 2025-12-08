@@ -1,25 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import suryaImg from './assets/surya.jpg'
 
-function MyButton() {
-  
-
-  return (
-    <>
-    <button>
-      MyButton
-    </button>
-    </>
-  )
-}
+const user = {
+  name: 'Suryaprakash',
+  imageUrl: suryaImg,
+  imageSize: 150,
+};
 
 export default function App(){
   return (
-    <div>
-      <h1>Welcome to App</h1>
-      <MyButton />
-    </div>
-  )
+    <>
+      <h1>{user.name}</h1>
+      <img
+        className="avatar"
+        src={user.imageUrl}
+        alt={"Photo of" + user.name}
+        style={{
+          width: user.imageSize,
+          height: user.imageSize,
+        }}
+      />
+    </>
+  );
 }
