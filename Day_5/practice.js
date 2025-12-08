@@ -43,4 +43,16 @@
 // }
 // fetch_API();
 
+let employee = [
+  { ena: "Arun", mob: 111 },
+  { ena: "Bala", mob: 222 },
+  { ena: "Chetan", mob: 333 },
+  { ena: "Dinesh", mob: 444 },
+  { ena: "Eshan", mob: 555 },
+];
+
+let newEmp = employee.filter(emp => emp.ena.includes("a") || emp.ena.includes("A"));
+
+console.log(newEmp);
++
 
