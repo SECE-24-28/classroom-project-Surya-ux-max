@@ -1,41 +1,45 @@
 // 
 
-import { useState } from "react";
+import { useState } from "react"; // use state is a react hook used by react to remember what it stores
 
-function App() {
-  const [items, setItems] = useState([]); // stores the list
-  const [text, setText] = useState(""); // stores input value
-  const [editingIndex, setEditingIndex] = useState(null); // track editing item
+function App(){
+  const[items,setItems] = useState([]);  // creating , storing items using useState , setItems will help in changing updating functions
 
-  const handleAdd = () => {
-    if (text === "") return;
+  const[text,setText] = useState(""); // used for text input , setText --- updates the input text
 
-    if (editingIndex !== null) {
-      // Updating existing item
-      const updatedList = [...items];
-      updatedList[editingIndex] = text;
-      setItems(updatedList);
-      setEditingIndex(null);
-    } else {
-      // Adding new item
-      setItems([...items, text]);
+  const[editingIndex,setEditingIndex] = useState(null); // react will remember what Text they are editing
+
+  const handleAdd = () =>{
+    if(text === "") return;  // it will check text box , if it contains any text else it will return empty 
+
+    if(editingIndex!=null){ // it means we are editing the existing item , id editingTools==null means adding new items
+
+      const updatedList = [...items]; // copy of file
+      updatedList[editingIndex] = text; // replace the item being edited 
+      setItems(updatedList); // save the updatedList
+      setEditingIndex( null); // stop the editing mode
     }
-
-    setText("");
+    else{
+      setItems([...items,text]); // adding new item
+    }
+    setText(""); // clears the text box 
   };
 
-  const handleDelete = (index) => {
-    const updatedList = items.filter((_, i) => i !== index);
+  const handleDelete = (index)=>{
+    const updatedList = items.filter((_,i)=>i !== index);
     setItems(updatedList);
   };
 
-  const handleEdit = (index) => {
+  const handleEdit = (index) =>{
     setText(items[index]);
     setEditingIndex(index);
   };
 
   return (
-    <div style={{ padding: "20px" }}>
+    
+    <div style={{ padding: "20px" , justifyContent:"center",alignItems:"center",display:"flex"
+                  
+    }}>
       <h2>Simple React CRUD</h2>
 
       <input 
@@ -72,3 +76,5 @@ function App() {
 }
 
 export default App;
+
+   
