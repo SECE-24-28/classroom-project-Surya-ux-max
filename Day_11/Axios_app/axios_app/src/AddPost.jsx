@@ -19,22 +19,25 @@ const AddPost = () => {
 
     try {
       await api.post("/Feedback", newPost);
-      navigate("/"); // redirect to home page after saving
+      navigate("/"); // redirect back home
     } catch (err) {
       console.log("Post Error:", err);
     }
   };
 
   return (
-    <div>
-      <h2>Add New Post</h2>
-      <form onSubmit={handleSubmit}>
+    <div style={{ maxWidth: "600px", margin: "0 auto" }}>
+      <h2>Add New Feedback</h2>
+
+      <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+        
         <input
           type="text"
           placeholder="Title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           required
+          style={{ padding: "10px", fontSize: "16px" }}
         />
 
         <textarea
@@ -42,9 +45,23 @@ const AddPost = () => {
           value={body}
           onChange={(e) => setBody(e.target.value)}
           required
+          rows={6}
+          style={{ padding: "10px", fontSize: "16px" }}
         ></textarea>
 
-        <button type="submit">Save</button>
+        <button
+          type="submit"
+          style={{
+            padding: "10px",
+            fontSize: "16px",
+            cursor: "pointer",
+            background: "black",
+            color: "white",
+            border: "none",
+          }}
+        >
+          Save
+        </button>
       </form>
     </div>
   );
