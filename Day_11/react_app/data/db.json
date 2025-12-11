@@ -1,0 +1,48 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Surya Prakash",
+      "role": "AI Engineer",
+      "experience": "3 Years",
+      "skills": ["Machine Learning", "Deep Learning", "NLP", "Python", "TensorFlow"],
+      "location": "Chennai, India",
+      "status": "Applied",
+      "positionApplied": "AI Systems Engineer",
+      "profileImage": "https://i.imgur.com/5ZQJz8G.png"
+    },
+    {
+      "id": 2,
+      "name": "Suganth",
+      "role": "Nvidia ML Engineer",
+      "experience": "4 Years",
+      "skills": ["CUDA", "GPU Optimization", "C++", "PyTorch", "Computer Vision"],
+      "location": "Bangalore, India",
+      "status": "Interview Scheduled",
+      "positionApplied": "ML Optimization Engineer",
+      "profileImage": "https://i.imgur.com/rPupvXG.png"
+    },
+    {
+      "id": 3,
+      "name": "Elina Rodriguez",
+      "role": "Aerospace AI Researcher",
+      "experience": "6 Years",
+      "skills": ["Reinforcement Learning", "Guidance Systems", "Simulation", "MATLAB"],
+      "location": "Texas, USA",
+      "status": "Selected",
+      "positionApplied": "Autonomous Flight Control Engineer",
+      "profileImage": "https://i.imgur.com/kfH2p7r.png"
+    },
+    {
+      "id": 4,
+      "name": "Liam Carter",
+      "role": "Robotics Engineer",
+      "experience": "5 Years",
+      "skills": ["ROS", "Embedded Systems", "AI Robotics", "C++", "Microcontrollers"],
+      "location": "Florida, USA",
+      "status": "Applied",
+      "positionApplied": "Robotics Systems Developer",
+      "profileImage": "https://i.imgur.com/MLZXzQ3.png"
+    }
+  ]
+}
