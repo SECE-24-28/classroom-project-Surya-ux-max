@@ -12,6 +12,23 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center; /* <-- centers everything */
+  padding: 20px;
+}
+
+.card {
+  width: 600px;
+  background: #1a1a1a;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.07);
+}
 
 a {
   font-weight: 500;

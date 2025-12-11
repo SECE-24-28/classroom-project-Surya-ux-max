@@ -8,8 +8,7 @@
       "skills": ["Machine Learning", "Deep Learning", "NLP", "Python", "TensorFlow"],
       "location": "Chennai, India",
       "status": "Applied",
-      "positionApplied": "AI Systems Engineer",
-      "profileImage": "https://i.imgur.com/5ZQJz8G.png"
+      "positionApplied": "AI Systems Engineer"
     },
     {
       "id": 2,
@@ -18,9 +17,8 @@
       "experience": "4 Years",
       "skills": ["CUDA", "GPU Optimization", "C++", "PyTorch", "Computer Vision"],
       "location": "Bangalore, India",
-      "status": "Interview Scheduled",
-      "positionApplied": "ML Optimization Engineer",
-      "profileImage": "https://i.imgur.com/rPupvXG.png"
+      "status": "Interview",
+      "positionApplied": "ML Optimization Engineer"
     },
     {
       "id": 3,
@@ -30,8 +28,7 @@
       "skills": ["Reinforcement Learning", "Guidance Systems", "Simulation", "MATLAB"],
       "location": "Texas, USA",
       "status": "Selected",
-      "positionApplied": "Autonomous Flight Control Engineer",
-      "profileImage": "https://i.imgur.com/kfH2p7r.png"
+      "positionApplied": "Autonomous Flight Control Engineer"
     },
     {
       "id": 4,
@@ -41,8 +38,7 @@
       "skills": ["ROS", "Embedded Systems", "AI Robotics", "C++", "Microcontrollers"],
       "location": "Florida, USA",
       "status": "Applied",
-      "positionApplied": "Robotics Systems Developer",
-      "profileImage": "https://i.imgur.com/MLZXzQ3.png"
+      "positionApplied": "Robotics Systems Developer"
     }
   ]
 }

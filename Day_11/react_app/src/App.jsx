@@ -1,35 +1,51 @@
-import { useEffect, useState } from 'react'
-import './App.css'
-import api from '../api/api'
+import { useEffect, useState } from "react";
+import "./App.css";
+import api from "../api/api";
 
 function App() {
-  const [Slist, setSList] = useState([])
+  const [employees, setEmployees] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await api.get('/users')
-        setSList(response.data)
+        const response = await api.get("/users");
+        setEmployees(response.data);
       } catch (err) {
-        console.error(err)
+        console.error(err);
       }
-    }
+    };
 
-    fetchData()
-  }, [])
+    fetchData();
+  }, []);
+return (
+  <div className="list">
+    {employees.map((emp) => (
+      <div className="card" key={emp.id}>
+        <h2>{emp.name}</h2>
+        <p className="role">{emp.role}</p>
 
-  return (
-    <div>
-      <h1>User List</h1>
+        <p><strong>Experience:</strong> {emp.experience}</p>
+        <p><strong>Location:</strong> {emp.location}</p>
+        <p><strong>Position Applied:</strong> {emp.positionApplied}</p>
 
-      {Slist.map((user, index) => (
-        <div className="card" key={index}>
-          <h2>{user.Name}</h2>
-          <p><strong>Role:</strong> {user.Role}</p>
-        </div>
-      ))}
-    </div>
-  )
+        <p>
+          <strong>Status:</strong>{" "}
+          <span className={`status ${emp.status.toLowerCase()}`}>
+            {emp.status}
+          </span>
+        </p>
+
+        <h4>Skills:</h4>
+        <ul className="skills">
+          {emp.skills.map((skill, i) => (
+            <li key={i}>{skill}</li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+);
+
 }
 
-export default App
+export default App;
