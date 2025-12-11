@@ -1,45 +1,46 @@
-import { useState, useEffect } from "react";
-import "./App.css";
+import { useEffect, useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import api from "./api/post";
-import Home from "./Home";
 import Search from "./Search";
+import Home from "./Home";
+import AddPost from "./AddPost";
 
 function App() {
   const [post, setPosts] = useState([]);
   const [search, setSearch] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
-  // Fetch feedback data
   useEffect(() => {
     const fetchPosts = async () => {
       try {
         const res = await api.get("/Feedback");
         setPosts(res.data);
       } catch (err) {
-        console.log("API Error:", err);
+        console.log(err);
       }
     };
 
-    fetchPosts();
+    fetchPosts(); // correct spelling
   }, []);
 
-  // FILTER the search results
   useEffect(() => {
-    const results = post.filter((p) =>
-      p.Title.toLowerCase().includes(search.toLowerCase()) ||
-      p.Body.toLowerCase().includes(search.toLowerCase())
+    const filtered = post.filter((p) =>
+      p.Title.toLowerCase().includes(search.toLowerCase())
     );
-    setSearchResults(results);
-  }, [post, search]);
+    setSearchResults(filtered);
+  }, [search, post]);
 
   return (
-    <>
-      {/* Search component */}
-      <Search search={search} setSearch={setSearch} />
+    <Router>
+      <div style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
+        <Search search={search} setSearch={setSearch} />
 
-      {/* Display filtered results */}
-      <Home searchResults={searchResults} />
-    </>
+        <Routes>
+          <Route path="/" element={<Home posts={searchResults} />} />
+          <Route path="/add" element={<AddPost />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
