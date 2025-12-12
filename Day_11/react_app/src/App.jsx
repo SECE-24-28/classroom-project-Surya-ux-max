@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import api from "../api/api";
+import api from "../Api/post";
 
 function App() {
   const [employees, setEmployees] = useState([]);
